@@ -38,6 +38,11 @@
                 android:title="@string/display_rotation_title"
                 android:fragment="com.android.settings.cyanogenmod.DisplayRotation" />
 
+        <PreferenceScreen
+                android:key="expanded_desktop"
+                android:title="@string/power_menu_expanded_desktop"
+                android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />				
+				
         <ListPreference
                 android:key="screen_timeout"
                 android:title="@string/screen_timeout"

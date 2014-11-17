@@ -310,6 +310,7 @@
     <string name="privacy_guard_manager_show_system_apps">Show built-in apps</string>
     <string name="privacy_guard_advanced_settings_title">Advanced</string>
 
+<<<<<<< HEAD
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
     <string name="increasing_ring_min_volume_title">Start volume</string>
@@ -847,4 +848,12 @@
 
     <!-- Performance menu, graphics options category -->
     <string name="graphics_title">Graphics and rendering</string>
+
+    <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="expanded_hide_nothing">Hide nothing</string>
+    <string name="expanded_hide_status">Hide statusbar</string>
+    <string name="expanded_hide_navigation">Hide navigation</string>
+    <string name="expanded_hide_both">Hide both</string>
+    <string name="expanded_nothing_to_show">Nothing to show</string>
+
 </resources>
