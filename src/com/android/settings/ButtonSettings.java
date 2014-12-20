@@ -333,6 +333,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         updateDisableHwKeysOption();
         updateNavBarSettings();
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+            prefScreen.removePreference(backlight);
+        }
     }
 
     @Override
@@ -515,7 +520,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) prefScreen.findPreference(KEY_BUTTON_BACKLIGHT);
 
-        /* Toggle backlight control depending on hw keys state, force it to
+        /* Toggle backlight control depending on navbar state, force it to
            off if enabling */
         if (backlight != null) {
             backlight.setEnabled(enabled);
