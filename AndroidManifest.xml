@@ -224,6 +224,14 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
                 android:value="true" />
         </activity>
+		
+        <!-- Validus Extra info -->
+        <activity android:name="com.android.settings.validus.extrainfo.MainActivity"
+                  android:theme="@android:style/Theme.Material.Dialog.NoActionBar.MinWidth">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>		
 
         <!-- Top-level settings -->
 

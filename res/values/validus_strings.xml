@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Validus Extra Info -->
+    <string name="vextrainfo">Extra information</string>
+    <string name="vextrainfo_summary">Display extra info for cpu, display, etc</string>
+
     <!-- About phone screen, crDroid version -->
     <string name="mod_version">Validus Version</string>
     <string name="mod_version_default">Unknown</string>
