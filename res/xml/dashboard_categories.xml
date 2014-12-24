@@ -89,7 +89,7 @@
                 android:id="@+id/crdroid_custom_settings"
                 android:title="@string/crdroid_custom_title"
                 android:fragment="com.android.settings.crdroid.CustomSettings"
-                android:icon="@drawable/ic_settings_system"
+                android:icon="@drawable/the_void_settings"
                 />
 
     </dashboard-category>
