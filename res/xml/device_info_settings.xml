@@ -17,6 +17,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 		
+        <PreferenceScreen android:key="validus_logo"
+                          android:enabled="false"
+                          android:layout="@layout/validus_logo_row" />		
+		
        <!-- Validus Extra Info -->
         <PreferenceScreen android:key="extrainfo"
                 android:title="@string/vextrainfo"
@@ -35,7 +39,7 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
-        <!-- crDroid Share -->
+        <!-- Validus Share -->
         <Preference
             android:key="share"
             android:title="@string/share_crdroid_title"
