@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2014 crDroid Android
+     Copyright (C) 2014 Validus Android
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- About phone screen, crDroid version -->
-    <string name="mod_version">crDroid version</string>
+    <string name="mod_version">Validus Version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- About phone screen, build date -->
@@ -34,8 +34,8 @@
     <string name="help">Help</string>
 
     <!-- crDroid custom settings -->
-    <string name="crdroid_custom_title">crDroid custom</string>
-    <string name="extras_crdroid_settings">Extras</string>
+    <string name="crdroid_custom_title">The Void</string>
+    <string name="extras_crdroid_settings">Odds N Ends</string>
     <string name="status_bar_settings">Status bar settings</string>
     <string name="recents_panel_settings">Recents panel settings</string>
     <string name="reset_message">Reset all entries to default?</string>
@@ -46,10 +46,10 @@
     <string name="sound_title">Sound</string>
 
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Share crDroid</string>
+    <string name="share_crdroid_title">Share Validus</string>
     <string name="share_crdroid_summary">Let others know about crDroid</string>
-    <string name="share_message">Check out what #crDroid is all about @ https://plus.google.com/u/0/communities/118297646046960923906</string>
-    <string name="share_chooser_title">Share crDroid</string>
+    <string name="share_message">Check out what #Validus is all about @ http://goo.gl/YwjQx9</string>
+    <string name="share_chooser_title">Share Validus</string>
 
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Notifications</string>
@@ -543,4 +543,7 @@
     <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
+		
 </resources>
