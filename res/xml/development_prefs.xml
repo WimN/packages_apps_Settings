@@ -27,6 +27,12 @@
                 android:targetClass="com.android.development.Development" />
     </PreferenceScreen>
 
+     <PreferenceScreen
+        android:id="@+id/system_app_remover"
+        android:title="@string/system_app_remover"
+        android:layout="@layout/preference_systemappremover"
+        android:fragment="com.android.settings.validus.SystemappRemover" />
+	
     <SwitchPreference
         android:key="advanced_reboot"
         android:title="@string/advanced_reboot_title"
