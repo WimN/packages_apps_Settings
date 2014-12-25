@@ -650,4 +650,9 @@
     <string name="sizer_message_filefail">Failed to create profile.</string>
     <string name="sizer_message_noselect">Nothing selected.</string>
     <string name="system_app_remover">System App Remover</string>		
+	
+    <!-- Search Bar Switcher -->
+    <string name="recents_show_searchbar">Show Search Bar in Recents</string>
+    <string name="recents_show_searchbar_summary">Enable or disable the Google search bar in the recents menu</string>
+	
 </resources>
