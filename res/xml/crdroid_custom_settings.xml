@@ -92,7 +92,31 @@
             android:persistent="false" />
 
     </PreferenceCategory>
-
+	
+    <PreferenceCategory
+        android:key="animation_settings_category"
+        android:title="@string/animation_settings_category" >
+		
+    <PreferenceScreen
+        android:id="@+id/listview"
+        android:fragment="com.android.settings.validus.Listview"
+        android:title="@string/listview_category" />
+			
+    <PreferenceScreen
+        android:id="@+id/animations"
+        android:title="@string/title_animation_controls"
+        android:fragment="com.android.settings.validus.fragments.AnimationControls" />
+	
+        <!-- Toast Animation -->
+        <ListPreference
+            android:key="toast_animation"
+            android:title="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
+            android:persistent="false" />		
+		
+    </PreferenceCategory>
+	
     <PreferenceCategory
         android:key="recents_panel"
         android:title="@string/recents_panel_settings" >
@@ -127,14 +151,6 @@
             android:key="gesture_anywhere"
             android:fragment="com.android.settings.crdroid.gestureanywhere.GestureAnywhereSettings"
             android:title="@string/gesture_anywhere_title" />
-
-        <!-- Toast Animation -->
-        <ListPreference
-            android:key="toast_animation"
-            android:title="@string/toast_animation_title"
-            android:entries="@array/toast_animation_entries"
-            android:entryValues="@array/toast_animation_values"
-            android:persistent="false" />
 			
         <!-- Wakelock blocker -->
         <PreferenceScreen
