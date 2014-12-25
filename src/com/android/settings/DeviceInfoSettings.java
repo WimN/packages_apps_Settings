@@ -219,13 +219,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             sendFeedback();
         } else if (prefKey.equals(KEY_KERNEL_VERSION)) {
             setStringSummary(KEY_KERNEL_VERSION, getKernelVersion());
-            return true;
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, String.format(
-                getActivity().getString(R.string.share_message), Build.MODEL));
-        startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));				
+            return true;		
         } else if (preference.getKey().equals(KEY_CRDROID_SHARE)) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
