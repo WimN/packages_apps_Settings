@@ -84,9 +84,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
-        private static final String KEY_DEVICE_CPU = "device_cpu";
+    private static final String KEY_DEVICE_CPU = "device_cpu";
     private static final String KEY_DEVICE_MEMORY = "device_memory";
-    private static final String KEY_MOD_VERSION = "mod_version";
+    private static final String KEY_VALIDUS_VERSION = "validus_version";
     private static final String KEY_CRDROID_SHARE = "share";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
 
@@ -109,8 +109,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
         setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
         findPreference(KEY_KERNEL_VERSION).setEnabled(true);		
-        setValueSummary(KEY_MOD_VERSION, "ro.crdroid.display.version");
-        findPreference(KEY_MOD_VERSION).setEnabled(true);
+        setValueSummary(KEY_VALIDUS_VERSION, "ro.validus.version");
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
         if (!SELinux.isSELinuxEnabled()) {

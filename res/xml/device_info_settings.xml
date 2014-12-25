@@ -107,11 +107,7 @@
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
 
-        <!-- crDroid Mod version -->
-        <Preference android:key="mod_version"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/mod_version"
-                android:summary="@string/mod_version_default" />
+
                 
         <!-- Device firmware version -->
         <Preference android:key="firmware_version" 
@@ -137,7 +133,7 @@
                 android:title="@string/kernel_version"
                 android:summary="@string/device_info_default"/>
 
-        <!-- crDroid build date -->
+        <!-- build date -->
         <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/build_date"
