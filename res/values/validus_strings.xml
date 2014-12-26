@@ -556,7 +556,7 @@
 		
     <!-- App Circle sidebar -->
     <string name="category_app_circle_bar_title">Circle App Launcher</string>
-    <string name="app_circle_bar_title">App circle bar</string>
+    <string name="app_circle_bar_title">App Circle Sidebar</string>
     <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
@@ -568,7 +568,7 @@
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
     <!-- Toast Animation -->
-    <string name="toast_animation_title">Toast animation</string>
+    <string name="toast_animation_title">Toast Animations</string>
     <string name="toast_none_animation">None</string>
     <string name="toast_default_animation">Default</string>
     <string name="toast_fade_animation">Fade</string>
@@ -632,7 +632,7 @@
     <string name="listview_bounce_interpolator">bounce_interpolator</string>	
 
     <!-- SlimSizer  -->
-    <string name="listsystem">list</string>
+    <string name="listsystem">List</string>
     <string name="sizer_title">System App Remover</string>
     <string name="caution">Caution!</string>
     <string name="sizer_message_startup">This tool allows you to delete system apps. Use with caution and only delete apps you know are safe to be removed.</string>
