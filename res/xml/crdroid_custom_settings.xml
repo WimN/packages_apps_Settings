@@ -143,7 +143,6 @@
 		
          <PreferenceScreen
             android:id="@+id/omniswitch"
-            android:layout="@layout/preference_omniswitch"
             android:title="@string/omniswitch_settings_title" >
             <intent
                 android:action="android.intent.action.MAIN"
