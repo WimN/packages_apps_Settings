@@ -23,7 +23,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
-public class CustomSettings extends SettingsPreferenceFragment implements
+public class OddsEnds extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "OddsEnds";
