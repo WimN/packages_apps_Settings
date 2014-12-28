@@ -43,7 +43,7 @@
 
     <!-- crDroid custom settings -->
     <string name="crdroid_custom_title">The Void</string>
-    <string name="odds_ends">Odds N Ends</string>
+    <string name="odds_ends_title">Odds N Ends</string>
     <string name="status_bar_settings">Statusbar Settings</string>
     <string name="recents_panel_settings">Recents Panel Settings</string>
 	<string name="recents_panel_title">Recents panel</string>
