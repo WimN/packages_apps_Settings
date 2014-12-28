@@ -43,9 +43,12 @@
 
     <!-- crDroid custom settings -->
     <string name="crdroid_custom_title">The Void</string>
-    <string name="extras_crdroid_settings">Odds N Ends</string>
+    <string name="odds_ends">Odds N Ends</string>
     <string name="status_bar_settings">Statusbar Settings</string>
     <string name="recents_panel_settings">Recents Panel Settings</string>
+	<string name="recents_panel_title">Recents panel</string>
+    <string name="animation_title">Animation</string>
+    <string name="animation_settings">Animation settings</string>	
     <string name="reset_message">Reset all entries to default?</string>
     
     <!-- Advanced sound settings -->

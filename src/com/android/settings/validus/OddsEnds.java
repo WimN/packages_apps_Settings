@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 crDroid Android
+ * Copyright (C) 2014 Validus Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.crdroid;
+package com.android.settings.validus;
 
 import android.os.Bundle;
 import android.content.res.Resources;
@@ -26,12 +26,12 @@ import com.android.settings.R;
 public class CustomSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "CustomSettings";
+    private static final String TAG = "OddsEnds";
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.crdroid_custom_settings);
+        addPreferencesFromResource(R.xml.odds_ends);
     }
 
     @Override
