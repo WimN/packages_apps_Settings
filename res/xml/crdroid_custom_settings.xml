@@ -18,6 +18,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/crdroid_custom_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+	
+        <!-- The Void logo -->
+        <PreferenceScreen android:key="void_logo"
+                android:enabled="false"
+                android:layout="@layout/void_logo" />
 
     <!-- Status bar settings -->
     <PreferenceScreen
