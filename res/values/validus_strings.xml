@@ -20,6 +20,9 @@
     <string name="vextrainfo">Extra Information</string>
     <string name="vextrainfo_summary">Display extra info for cpu, display, etc</string>
 
+    <!-- Main list strings -->
+    <string name="performance_settings">Performance</string>	
+	
     <!-- About phone screen, liquid version -->
     <string name="validus_version_title">Validus Version</string>
     <string name="validus_version_default">Unknown</string>
