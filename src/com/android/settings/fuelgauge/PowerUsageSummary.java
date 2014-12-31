@@ -24,6 +24,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.BatteryStats;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -294,6 +295,9 @@ public class PowerUsageSummary extends PreferenceFragment {
                     if (percentOfTotal < 10) {
                         continue;
                     }
+                    if ("user".equals(Build.TYPE) || "userdebug".equals(Build.TYPE) || "eng".equals(Build.TYPE)) {
+                        continue;
+                    }					
                     if (!showUnacAndOvercounted) {
                         continue;
                     }
@@ -307,6 +311,9 @@ public class PowerUsageSummary extends PreferenceFragment {
                     if (percentOfTotal < 5) {
                         continue;
                     }
+                    if ("user".equals(Build.TYPE) || "userdebug".equals(Build.TYPE) || "eng".equals(Build.TYPE)) {
+                        continue;
+                    }					
                     if (!showUnacAndOvercounted) {
                         continue;
                     }
