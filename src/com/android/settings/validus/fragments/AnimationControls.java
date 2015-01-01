@@ -19,6 +19,8 @@ import java.util.Arrays;
 
 public class AnimationControls extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+    private static final String ANIMATION_CONTROLS_EXIT_ONLY = "animation_controls_exit_only";
+    private static final String ANIMATION_CONTROLS_REVERSE_EXIT = "animation_controls_reverse_exit";
     private static final String ACTIVITY_OPEN = "activity_open";
     private static final String ACTIVITY_CLOSE = "activity_close";
     private static final String TASK_OPEN = "task_open";
@@ -26,12 +28,14 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     private static final String TASK_MOVE_TO_FRONT = "task_move_to_front";
     private static final String TASK_MOVE_TO_BACK = "task_move_to_back";
     private static final String ANIMATION_DURATION = "animation_duration";
-    private static final String ANIMATION_NO_OVERRIDE = "animation_no_override";
     private static final String WALLPAPER_OPEN = "wallpaper_open";
     private static final String WALLPAPER_CLOSE = "wallpaper_close";
     private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
-
+	private static final String TASK_OPEN_BEHIND = "task_open_behind";
+	
+    SwitchPreference mAnimExitOnly;
+    SwitchPreference mAnimReverseExit;
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
     ListPreference mTaskOpenPref;
@@ -42,8 +46,8 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     ListPreference mWallpaperClose;
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
+	ListPreference mTaskOpenBehind;
     AnimBarPreference mAnimationDuration;
-    SwitchPreference mAnimNoOverride;
 
     private int[] mAnimations;
     private String[] mAnimationsStrings;
@@ -65,10 +69,14 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
             mAnimationsStrings[i] = AwesomeAnimationHelper.getProperName(mContext, mAnimations[i]);
             mAnimationsNum[i] = String.valueOf(mAnimations[i]);
         }
+		
+        mAnimExitOnly = (SwitchPreference) findPreference(ANIMATION_CONTROLS_EXIT_ONLY);
+        mAnimExitOnly.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.ANIMATION_CONTROLS_EXIT_ONLY, false));
 
-        mAnimNoOverride = (SwitchPreference) findPreference(ANIMATION_NO_OVERRIDE);
-        mAnimNoOverride.setChecked(Settings.System.getBoolean(mContentRes,
-                Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE, false));
+        mAnimReverseExit = (SwitchPreference) findPreference(ANIMATION_CONTROLS_REVERSE_EXIT);
+        mAnimReverseExit.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.ANIMATION_CONTROLS_REVERSE_EXIT, false));
 
         mActivityOpenPref = (ListPreference) findPreference(ACTIVITY_OPEN);
         mActivityOpenPref.setOnPreferenceChangeListener(this);
@@ -129,23 +137,36 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
         mWallpaperIntraClose.setSummary(getProperSummary(mWallpaperIntraClose));
         mWallpaperIntraClose.setEntries(mAnimationsStrings);
         mWallpaperIntraClose.setEntryValues(mAnimationsNum);
+		
+        mTaskOpenBehind = (ListPreference) findPreference(TASK_OPEN_BEHIND);
+        mTaskOpenBehind.setOnPreferenceChangeListener(this);
+        mTaskOpenBehind.setSummary(getProperSummary(mTaskOpenBehind));
+        mTaskOpenBehind.setEntries(mAnimationsStrings);
+        mTaskOpenBehind.setEntryValues(mAnimationsNum);
 
         int defaultDuration = Settings.System.getInt(mContentRes,
-                Settings.System.ANIMATION_CONTROLS_DURATION, 0);
+                Settings.System.ANIMATION_CONTROLS_DURATION, 25);
         mAnimationDuration = (AnimBarPreference) findPreference(ANIMATION_DURATION);
         mAnimationDuration.setInitValue((int) (defaultDuration));
         mAnimationDuration.setOnPreferenceChangeListener(this);
+
+        updateRevExitAnim();		
     }
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-       if (preference == mAnimNoOverride) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mAnimExitOnly) {
             Settings.System.putBoolean(mContentRes,
-                    Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE,
-                        mAnimNoOverride.isChecked());
+                    Settings.System.ANIMATION_CONTROLS_EXIT_ONLY,
+                        mAnimExitOnly.isChecked());
+            updateRevExitAnim();
+            return true;
+        } else if (preference == mAnimReverseExit) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.ANIMATION_CONTROLS_REVERSE_EXIT,
+                        mAnimReverseExit.isChecked());
             return true;
         }
-        return false;
+	return false;
     }
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -206,6 +227,10 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[9], val);
+        } else if (preference == mTaskOpenBehind) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(mContentRes,
+                    Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], val);					
         } else if (preference == mAnimationDuration) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
@@ -237,9 +262,18 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
             mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[8];
         } else if (preference == mWallpaperIntraClose) {
             mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[9];
+        } else if (preference == mTaskOpenBehind) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[10];			
         }
 
         int mNum = Settings.System.getInt(mContentRes, mString, 0);
         return mAnimationsStrings[mNum];
     }
+
+    private void updateRevExitAnim() {
+        boolean enabled = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.ANIMATION_CONTROLS_EXIT_ONLY, 0) == 1;
+
+        mAnimReverseExit.setEnabled(!enabled);
+    }	
 }
