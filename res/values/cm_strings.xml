@@ -816,7 +816,7 @@
 
     <!-- Performance settings -->
     <string name="title_tile_performance_profile">Performance profile</string>
-    <string name="performance_settings_title">Performance Xtra</string>
+    <string name="performance_settings_title">Performance</string>
 
     <!-- Performance Settings : I/O scheduler settings title -->
     <string name="io_scheds_title">I/O scheduler</string>
