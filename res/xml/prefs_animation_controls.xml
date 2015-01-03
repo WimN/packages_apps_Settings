@@ -69,8 +69,9 @@
             android:key="wallpaper_intra_close"
             android:title="@string/wallpaper_intra_close_title" />
 
-        <com.android.settings.widgets.AnimBarPreference
+        <SlimSeekBarPreference
             android:key="animation_duration"
-            android:title="@string/animation_duration_title" />
+            android:title="@string/animation_duration_title"
+            android:persistent="false" />
 
 </PreferenceScreen>
