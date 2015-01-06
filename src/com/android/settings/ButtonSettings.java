@@ -57,12 +57,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
     private static final String KEY_ASSIST_PRESS = "hardware_keys_assist_press";
-    private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";	
+    private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
-	private static final String KEY_ENABLE_NAVIGATION_BAR = "enable_nav_bar";
+    private static final String KEY_ENABLE_NAVIGATION_BAR = "enable_nav_bar";
     private static final String KEY_ENABLE_HW_KEYS = "enable_hw_keys";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
     private static final String KEY_POWER_END_CALL = "power_end_call";
@@ -107,12 +107,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
+    private ListPreference mAssistPressAction;
+    private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
-    private ListPreference mAssistPressAction;
-    private ListPreference mAssistLongPressAction;	
     private ListPreference mVolumeKeyCursorControl;
-	private SwitchPreference mSwapVolumeButtons;
+    private SwitchPreference mSwapVolumeButtons;
     private SwitchPreference mEnableNavigationBar;
     private SwitchPreference mEnableHwKeys;
     private SwitchPreference mNavigationBarLeftPref;
@@ -159,7 +159,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
         final PreferenceCategory assistCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);				
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
         final PreferenceCategory volumeCategory =
@@ -290,7 +290,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } else {
             prefScreen.removePreference(assistCategory);
         }
-		
+
         if (hasAppSwitchKey) {
             int pressAction = Settings.System.getInt(resolver,
                     Settings.System.KEY_APP_SWITCH_ACTION, ACTION_APP_SWITCH);
@@ -319,7 +319,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0);
             mSwapVolumeButtons = (SwitchPreference)
                     prefScreen.findPreference(KEY_SWAP_VOLUME_BUTTONS);
-            mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);					
+            mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
         } else {
             prefScreen.removePreference(volumeCategory);
         }
@@ -332,7 +332,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
 
         updateDisableHwKeysOption();
-        updateNavBarSettings();       
+        updateNavBarSettings();
     }
 
     @Override
@@ -426,7 +426,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } else if (preference == mAssistLongPressAction) {
             handleActionListChange(mAssistLongPressAction, newValue,
                     Settings.System.KEY_ASSIST_LONG_PRESS_ACTION);
-            return true;			
+            return true;
         } else if (preference == mAppSwitchPressAction) {
             handleActionListChange(mAppSwitchPressAction, newValue,
                     Settings.System.KEY_APP_SWITCH_ACTION);
@@ -450,7 +450,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     ? (Utils.isTablet(getActivity()) ? 2 : 1) : 0;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
-		} else if (preference == mPowerEndCall) {
+        } else if (preference == mPowerEndCall) {
             handleTogglePowerButtonEndsCallPreferenceClick();
             return true;
         } else if (preference == mHomeAnswerCall) {
@@ -469,7 +469,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         Settings.System.putInt(context.getContentResolver(),
                 Settings.System.ENABLE_HW_KEYS, enabled ? 1 : 0);
 
-        if (KeyDisabler.isSupported()) {
+        if (isKeyDisablerSupported()) {
             KeyDisabler.setActive(!enabled);
         }
 
@@ -515,7 +515,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) prefScreen.findPreference(KEY_BUTTON_BACKLIGHT);
 
-        /* Toggle backlight control depending on navbar state, force it to
+        /* Toggle backlight control depending on hw keys state, force it to
            off if enabling */
         if (backlight != null) {
             backlight.setEnabled(enabled);
@@ -541,12 +541,21 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     }
 
     public static void restoreKeyDisabler(Context context) {
-        if (!KeyDisabler.isSupported()) {
+        if (!isKeyDisablerSupported()) {
             return;
         }
 
         writeDisableHwKeysOption(context, Settings.System.getInt(context.getContentResolver(),
                 Settings.System.ENABLE_HW_KEYS, 1) == 1);
+    }
+
+    private static boolean isKeyDisablerSupported() {
+        try {
+            return KeyDisabler.isSupported();
+        } catch (NoClassDefFoundError e) {
+            // Hardware abstraction framework not installed
+            return false;
+        }
     }
 
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
