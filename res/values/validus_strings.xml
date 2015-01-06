@@ -40,6 +40,8 @@
     <string name="reset">Reset</string>
     <string name="default_string">Default</string>
     <string name="help">Help</string>
+	
+	<string name="equalizer_settings_title">Viper</string>
 
     <!-- crDroid custom settings -->
     <string name="crdroid_custom_title">The Void</string>
