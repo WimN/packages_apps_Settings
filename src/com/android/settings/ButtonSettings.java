@@ -332,7 +332,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
 
         updateDisableHwKeysOption();
-        updateNavBarSettings();       
+        updateNavBarSettings();
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+            prefScreen.removePreference(backlight);
+        }
     }
 
     @Override
