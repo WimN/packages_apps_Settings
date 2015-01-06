@@ -56,7 +56,7 @@
     <!-- Equalizer -->
     <Preference
         android:id="@+id/equalizer_settings"
-        android:title="@string/equalizer_settings_title"
+        android:title="@string/equalizer_settings_title">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
