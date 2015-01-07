@@ -34,8 +34,6 @@
 
     </PreferenceCategory>
 
-<<<<<<< HEAD
-=======
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="quick_settings_vibrate"
         android:title="@string/quick_settings_vibrate_title"
@@ -48,5 +46,4 @@
         android:summary="@string/qs_advanced_location_summary"
         android:defaultValue="false" />
 
->>>>>>> cdd0e05... [2/2] Settings: Add Haptic Feedback to quicktiles
 </PreferenceScreen>
