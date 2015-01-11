@@ -119,7 +119,9 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
-
+    <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
+    <string name="recents_clear_all_dismiss_all_summary">Choose whether to dismiss all tasks or ignore the foreground task</string>
+	
     <!-- Notifications on keyguard -->
     <string name="app_notification_show_on_keyguard_title">Show on lockscreen</string>
     <string name="app_notification_show_on_keyguard_summary">Show notifications from this app on the lockscreen</string>
