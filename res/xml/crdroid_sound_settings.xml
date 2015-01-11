@@ -29,5 +29,10 @@
         android:entries="@array/less_notification_sounds_entries"
         android:entryValues="@array/less_notification_sounds_values"
         android:persistent="false" />
-
+                
+    <PreferenceScreen
+        android:key="volume_steps"
+        android:fragment="com.android.settings.validus.VolumeSteps"
+        android:title="@string/volume_steps_title" />
+                		
 </PreferenceScreen>
