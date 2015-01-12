@@ -20,7 +20,7 @@
     <string name="vextrainfo">Extra Information</string>
     <string name="vextrainfo_summary">Display extra info for cpu, display, etc</string>
 
-    <!-- About phone screen, liquid version -->
+    <!-- About phone screen, Validus version -->
     <string name="validus_version_title">Validus Version</string>
     <string name="validus_version_default">Unknown</string>
 	
@@ -43,7 +43,7 @@
 	
 	<string name="equalizer_settings_title">Viper</string>
 
-    <!-- crDroid custom settings -->
+    <!-- Validus custom settings -->
     <string name="crdroid_custom_title">The Void</string>
     <string name="odds_ends_title">Odds N Ends</string>
 	<string name="odds_ends_settings">Odds N Ends</string>
@@ -674,10 +674,17 @@
     <string name="custom_density_dialog_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device"</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
-		
+
     <!-- OmniSwitch -->
     <string name="omniswitch_settings_title">OmniSwitch</string>
-
+    <string name="omniswitch_category">OmniSwitch</string>
+    <string name="recents_use_omniswitch_title">Use for recents</string>
+    <string name="recents_use_omniswitch_summary">Use OmniSwitch instead of default recents view</string>
+    <string name="omniswitch_start_settings_title">Settings</string>
+    <string name="omniswitch_start_settings_summary">Open OmniSwitch settings</string>
+    <string name="omniswitch_first_time_title">Information</string>
+    <string name="omniswitch_first_time_message">Make sure you have enabled OmniSwitch. You can do this by using \"Settings\" below</string>
+	
     <!-- Navigation Bar on the left -->
     <string name="navigation_bar_left_title">Left-handed mode</string>
     <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
