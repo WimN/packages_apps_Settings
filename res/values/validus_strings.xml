@@ -818,5 +818,9 @@
     <string name="navigation_menu_always_show">Always show</string>
     <string name="title_pref_menu_display">Menu visibility</string>
     <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
+
+    <!-- Performance Misc -->
+    <string name="misc_title">Performance Misc</string>
+    <string name="pref_force_fast_charge_title">Force fast charge</string>
 	
 </resources>
