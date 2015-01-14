@@ -25,9 +25,8 @@
     <string name="validus_version_default">Unknown</string>
 	
 	<!-- Animation Strings -->
-	<string name="animation_settings_category">Display and Animations</string>
+	<string name="animation_settings_category">Animations</string>
 	<string name="animation_settings_title">Animations</string>
-	<string name="misc_category">Density</string>
 
     <!-- About phone screen, build date -->
     <string name="build_date">Build Date</string>
@@ -823,19 +822,5 @@
     <!-- Performance Misc -->
     <string name="misc_title">Performance Misc</string>
     <string name="pref_force_fast_charge_title">Force fast charge</string>
-	
-    <!-- Setting option name to change LCD density -->
-    <string name="lcd_density">LCD density</string>
-    <string name="dialog_title_lcd_density">LCD density</string>
-    <string name="lcd_density_summary">xxx DPI</string>
-    <string name="custom_density_title">Change to whatever you like</string>
-    <string name="custom_density_summary">If you ever have compatibility issues with the Play Store, be sure to doublecheck if a Multi-DPI Play Store is installed.</string>
-    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
-    <string name="custom_density">custom</string>
-    <string name="set_custom_density_title">Set custom density</string>
-    <string name="set_custom_density_set">Set</string>
-    <string name="custom_density_dialog_title">WARNING!</string>
-    <string name="custom_density_dialog_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device"</string>
-    <string name="dpi">DPI</string>	
 	
 </resources>
