@@ -36,6 +36,12 @@
          android:fragment="com.android.settings.crdroid.RecentsPanelSettings"
          android:title="@string/recents_panel_title"/>
 		 
+    <!-- Lockscreen Settings -->
+    <PreferenceScreen
+         android:key="lock_crdroid"
+         android:title="@string/crdroid_lock_title"
+         android:fragment="com.android.settings.crdroid.LockcrDroid" />
+
     <!-- Animation settings -->
     <PreferenceScreen
          android:key="animation"
