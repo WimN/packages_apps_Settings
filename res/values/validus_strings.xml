@@ -40,8 +40,6 @@
     <string name="reset">Reset</string>
     <string name="default_string">Default</string>
     <string name="help">Help</string>
-	
-	<string name="equalizer_settings_title">Viper</string>
 
     <!-- Validus custom settings -->
     <string name="crdroid_custom_title">The Void</string>
@@ -52,6 +50,23 @@
 	<string name="recents_panel_title">Recents Panel</string>
     <string name="animation_title">Animation</string>
     <string name="animation_settings">Animation Settings</string>	
+    <string name="ok">Ok</string>
+
+    <!-- Performance Misc -->
+    <string name="misc_title">crDroid misc</string>
+    <string name="pref_force_fast_charge_title">Force fast charge</string>
+
+    <!-- crDroid custom settings -->
+    <string name="crdroid_custom_title">crDroid custom</string>
+    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_settings">Status bar settings</string>
+    <string name="recents_panel_title">Recents panel</string>
+    <string name="recents_panel_settings">Recents panel settings</string>
+    <string name="animation_settings_title">Animations</string>
+    <string name="animation_settings">Animation settings</string>
+    <string name="display_settings">Display</string>
+    <string name="display_settings_title">Display settings</string>
+>>>>>>> b66bfd9... Add LCD density setting:res/values/cr_strings.xml
     <string name="reset_message">Reset all entries to default?</string>
 
     <!-- crDroid lockscreen -->
@@ -812,6 +827,7 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
 
+<<<<<<< HEAD:res/values/validus_strings.xml
     <!-- Show carrier label and custom -->
     <string name="carrier_options">Carrier Label Options</string>
     <string name="show_status_bar_carrier_title">Status bar carrier</string>
@@ -820,4 +836,13 @@
     <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>    
    	
+=======
+    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking LCD density -->
+    <!-- Display settings screen, setting option name to change LCD density -->
+    <string name="lcd_density">LCD density</string>
+    <string name="dialog_title_lcd_density">LCD density</string>
+    <!-- Sound & display settings screen, setting option summary to change LCD density -->
+    <string name="lcd_density_summary">xxx DPI</string>
+
+>>>>>>> b66bfd9... Add LCD density setting:res/values/cr_strings.xml
 </resources>
