@@ -74,9 +74,6 @@
     <!-- Vanir feature permissions -->
     <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO"/>    
 	
-    <!-- Heads up -->
-    <uses-permission android:name="android.permission.CHANGE_HEADS_UP_STATE" />
-
     <permission
         android:name="cyanogenmod.permission.PROTECTED_APP"
         android:protectionLevel="signatureOrSystem" />
