@@ -22,13 +22,6 @@
     <PreferenceCategory
         android:key="odds_ends"
         android:title="@string/odds_ends_settings" >	
-		
-	<!-- Hide SU Icon -->		
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-         android:key="show_su_icon"
-         android:title="@string/su_indicator"
-         android:summary="@string/su_indicator_summary"
-         android:defaultValue="true" />		
 	
     <!-- Circle app bar -->
     <PreferenceScreen
@@ -59,6 +52,13 @@
          android:key="screen_recorder"
          android:title="@string/screen_recorder_title"
          android:fragment="com.android.settings.validus.ScreenRecorderSettings" />
+
+	<!-- Hide SU Icon -->		
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+         android:key="show_su_icon"
+         android:title="@string/su_indicator"
+         android:summary="@string/su_indicator_summary"
+         android:defaultValue="true" />
 		 
     <!-- Equalizer -->
     <Preference
