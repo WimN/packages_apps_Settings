@@ -15,20 +15,20 @@
 -->
 
 <FrameLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-
-  <FrameLayout
-    android:id="@+id/prefs_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/prefs_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <TextView
-      android:id="@+id/disabled_text"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:gravity="center"
-      android:text="@string/heads_up_disabled_notice" />
+        android:id="@+id/disabled_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/heads_up_disabled_notice" />
 
-    </FrameLayout>
+</FrameLayout>
