@@ -788,4 +788,8 @@
     <string name="dialer_widget_hide">Disable lockscreen dialer</string>
     <string name="dialer_widget_hide_summary">Allows you to disable swipe to open dialer in lockscreen.\n<b>SystemUI will restart</b></string>
 
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
+
 </resources>
