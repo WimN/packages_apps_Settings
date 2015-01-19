@@ -30,6 +30,12 @@
          android:fragment="com.android.settings.crdroid.StatusBarSettings"
          android:title="@string/status_bar_title"/>
 
+	<!-- Navigation -->		
+    <PreferenceScreen
+            android:key="navigation_bar"
+            android:fragment="com.android.settings.validus.navbar.NavbarTabHostFragment"
+            android:title="@string/category_navbar" />	 		 
+
     <!-- Recent panel settings -->
     <PreferenceScreen
          android:key="recents_panel"
