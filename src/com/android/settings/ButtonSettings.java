@@ -51,7 +51,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "SystemSettings";
 	
 	private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
-    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
@@ -67,7 +66,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 	private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
 	private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button"; 
-    private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button"; 	
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -117,7 +115,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mNavigationBarLeftPref;	
     private SwitchPreference mEnableNavigationBar;
     private SwitchPreference mEnableHwKeys;
-    private SwitchPreference mNavigationBarLeftPref;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private ListPreference mOverflowButtonMode; 
@@ -367,13 +364,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");
         }
-		
-        final ButtonBacklightBrightness backlight =
-                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()
-            || !getResources().getBoolean(com.android.internal.R.bool.config_hwKeysPref)) {
-            prefScreen.removePreference(backlight);
-        }
 
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
@@ -574,10 +564,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         /* Toggle hardkey control availability depending on navbar state */
         if (homeCategory != null) {
             homeCategory.setEnabled(!navbarEnabled);
-        }
-        if (backCategory != null) {
-            backCategory.setEnabled(!navbarEnabled);
-        }		
+        }	
         if (menuCategory != null) {
             menuCategory.setEnabled(!navbarEnabled);
         }
