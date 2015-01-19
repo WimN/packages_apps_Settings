@@ -557,7 +557,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         /* Toggle backlight control depending on hw keys state, force it to
            off if enabling */
         if (backlight != null) {
-            backlight.setEnabled(enabled);
+            backlight.setEnabled(!navbarEnabled);
             backlight.updateSummary();
         }
 
