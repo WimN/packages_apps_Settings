@@ -39,7 +39,8 @@ import com.android.settings.util.Helpers;
 import com.android.settings.Utils;
 
 public class LockcrDroid extends SettingsPreferenceFragment
-        implements OnSharedPreferenceChangeListener {
+        implements OnSharedPreferenceChangeListener,
+        Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "LockcrDroid";
 
