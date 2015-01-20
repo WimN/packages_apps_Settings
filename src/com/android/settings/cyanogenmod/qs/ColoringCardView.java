@@ -46,14 +46,14 @@ public class ColoringCardView extends CardView {
     public void setColor(int color) {
         if (color != mColorFilter.getColor()) {
             mColorFilter.setColor(color);
-            mPaint.setColorFilter(color == Color.BLACK ? null : mColorFilter);
+            mPaint.setColorFilter(color == Color.TRANSPARENT ? null : mColorFilter);
             setLayerPaint(mPaint);
         }
     }
 
     private void init() {
         mPaint = new Paint();
-        mColorFilter = new PorterDuffColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+        mColorFilter = new PorterDuffColorFilter(Color.TRANSPARENT, PorterDuff.Mode.MULTIPLY);
         setLayerType(LAYER_TYPE_HARDWARE, mPaint);
     }
 }
