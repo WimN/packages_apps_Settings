@@ -51,6 +51,8 @@
     <string name="animation_title">Animation</string>
     <string name="animation_settings">Animation Settings</string>	
     <string name="ok">Ok</string>
+    <string name="dialog_restart">Restart</string>
+    <string name="dialog_cancel">Cancel</string>
 
     <!-- Performance Misc -->
     <string name="misc_title">crDroid misc</string>
@@ -852,6 +854,7 @@
     <string name="custom_density_dialog_title">WARNING!</string>
     <string name="custom_density_dialog_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device"</string>
     <string name="dpi">DPI</string>
+    <string name="custom_density_warning">Restart the system and apply selected density?</string>
 
 >>>>>>> b66bfd9... Add LCD density setting:res/values/cr_strings.xml
 </resources>
