@@ -32,7 +32,6 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
-import android.widget.Toast;
 import android.util.Log;
 import android.view.IWindowManager;
 import android.view.KeyCharacterMap;
@@ -65,8 +64,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";    
 	private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
-	private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button"; 
-
+	
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_BACK = "back_key";
@@ -117,7 +115,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mEnableHwKeys;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
-    private ListPreference mOverflowButtonMode; 
 	
 	private PreferenceCategory mNavigationPreferencesCat;
 
@@ -167,11 +164,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
         final PreferenceCategory volumeCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);
-
-        // Menu Overflow Config.        
-        mOverflowButtonMode = (ListPreference) findPreference(KEYS_OVERFLOW_BUTTON);
-        mOverflowButtonMode.setOnPreferenceChangeListener(this);                
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);          
 				
         // Power button ends calls.
         mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
@@ -415,14 +408,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mOverflowButtonMode) {
-            int val = Integer.parseInt((String) newValue);
-            int index = mOverflowButtonMode.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getContentResolver(), Settings.System.UI_OVERFLOW_BUTTON, val);
-            mOverflowButtonMode.setSummary(mOverflowButtonMode.getEntries()[index]);
-            Toast.makeText(getActivity(), R.string.keys_overflow_toast, Toast.LENGTH_LONG).show();						
-            return true;
-        } else if (preference == mHomeLongPressAction) {
+        if (preference == mHomeLongPressAction) {
             handleActionListChange(mHomeLongPressAction, newValue,
                     Settings.System.KEY_HOME_LONG_PRESS_ACTION);
             return true;
