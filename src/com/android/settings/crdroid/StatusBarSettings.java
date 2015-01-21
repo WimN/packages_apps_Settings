@@ -167,6 +167,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+	ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQuickPulldown) {
             int statusQuickPulldown = Integer.valueOf((String) objValue);
             Settings.System.putInt(getContentResolver(),
@@ -264,6 +265,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
         }
     }
+	
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             final Preference preference) {
