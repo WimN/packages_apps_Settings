@@ -24,11 +24,6 @@
         android:title="@string/status_bar_settings" >
 
         <PreferenceScreen
-            android:key="clock_style_pref"
-            android:fragment="com.android.settings.crdroid.StatusBarClockStyle"
-            android:title="@string/status_bar_clock" />
-
-        <PreferenceScreen
             android:key="network_traffic_state"
             android:fragment="com.android.settings.crdroid.NetworkTraffic"
 			android:summary="@string/network_traffic_summary"
