@@ -137,7 +137,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
         enableStatusBarBatteryDependents(batteryStyle);
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
-        mStatusBarCarrier = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
         mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
@@ -192,7 +192,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     (Boolean) objValue ? 1 : 0);
             return true;
         } else if (preference == mStatusBarCarrier) {
-            boolean value = (Boolean) newValue;
+            boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
             return true;			
         } else if (preference == mStatusBarBattery) {
