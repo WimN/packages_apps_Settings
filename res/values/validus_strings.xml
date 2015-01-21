@@ -68,7 +68,6 @@
     <string name="animation_settings">Animation settings</string>
     <string name="display_settings">Display</string>
     <string name="display_settings_title">Display settings</string>
->>>>>>> b66bfd9... Add LCD density setting:res/values/cr_strings.xml
     <string name="reset_message">Reset all entries to default?</string>
 
     <!-- crDroid lockscreen -->
