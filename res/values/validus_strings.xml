@@ -55,19 +55,12 @@
     <string name="dialog_cancel">Cancel</string>
 
     <!-- Performance Misc -->
-    <string name="misc_title">crDroid misc</string>
+    <string name="misc_title">Validus misc</string>
     <string name="pref_force_fast_charge_title">Force fast charge</string>
 
-    <!-- crDroid custom settings -->
-    <string name="crdroid_custom_title">crDroid custom</string>
-    <string name="status_bar_title">Status bar</string>
-    <string name="status_bar_settings">Status bar settings</string>
-    <string name="recents_panel_title">Recents panel</string>
-    <string name="recents_panel_settings">Recents panel settings</string>
     <string name="animation_settings_title">Animations</string>
-    <string name="animation_settings">Animation settings</string>
     <string name="display_settings">Display</string>
-    <string name="display_settings_title">Display settings</string>
+    <string name="display_settings_title">Display Settings</string>
     <string name="reset_message">Reset all entries to default?</string>
 
     <!-- crDroid lockscreen -->
