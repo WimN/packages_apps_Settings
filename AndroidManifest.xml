@@ -2095,9 +2095,7 @@
                 android:value="com.android.settings.notification.OtherSoundSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/notification_settings" />
-        </activity>
-
-        <activity android:name=".validus.DensityChanger" />		
+        </activity>	
 		
         <!-- Show apps for which application-level notification settings are applicable -->
         <activity android:name="Settings$NotificationAppListActivity"
