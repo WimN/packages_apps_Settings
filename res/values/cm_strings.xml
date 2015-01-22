@@ -909,12 +909,6 @@
 
     <!-- Performance menu, graphics options category -->
     <string name="graphics_title">Graphics and rendering</string>
-    <string name="power_menu_expanded_desktop">Expanded desktop</string>
-    <string name="expanded_hide_nothing">Hide nothing</string>
-    <string name="expanded_hide_status">Hide statusbar</string>
-    <string name="expanded_hide_navigation">Hide navigation</string>
-    <string name="expanded_hide_both">Hide both</string>
-    <string name="expanded_nothing_to_show">Nothing to show</string>
 
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
