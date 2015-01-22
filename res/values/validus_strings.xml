@@ -770,14 +770,6 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
 	
-    <!-- Show carrier label and custom -->
-    <string name="carrier_options">Carrier Label Options</string>
-    <string name="show_status_bar_carrier_title">Status bar carrier</string>
-    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
-    <string name="custom_carrier_label_title">Custom carrier label</string>
-    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
-    <string name="custom_carrier_label_notset">Custom label currently not set</string>    
-   	
     <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking LCD density -->
     <!-- crdroid display settings screen, setting option name to change LCD density -->
     <string name="lcd_density">LCD density</string>
