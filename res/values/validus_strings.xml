@@ -795,8 +795,4 @@
     <string name="dpi">DPI</string>
     <string name="custom_density_warning">Restart the system and apply selected density?</string>
 
-    <!-- Lockscreen weather -->
-    <string name="lockscreen_weather_title">Lockscreen Weather</string>
-    <string name="lockscreen_weather_summary">SystemUI will be restarted!</string>
-	
 </resources>

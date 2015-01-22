@@ -27,13 +27,6 @@
             android:key="camera_widget_hide"
             android:title="@string/camera_widget_hide"
             android:summary="@string/camera_widget_hide_summary" />
-			
-        <!-- lockscreen weather -->
-        <SwitchPreference
-            android:key="lockscreen_weather"
-            android:title="@string/lockscreen_weather_title"
-            android:summary="@string/lockscreen_weather_summary"
-            android:defaultValue="true" />
 
         <!-- Disable dialer swipe -->
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
