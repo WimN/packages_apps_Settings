@@ -123,12 +123,12 @@ public class LockcrDroid extends SettingsPreferenceFragment
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.DIALER_WIDGET_HIDE, value ? 1 : 0, UserHandle.USER_CURRENT);
             Helpers.restartSystem();
-        }
-        return true;
         } else if (preference == mLockscreenWeather) {
             boolean value = (Boolean) objValue;
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_WEATHER, value ? 1 : 0, UserHandle.USER_CURRENT);
-            Helpers.restartSystem();		
+            Helpers.restartSystem();			
+        }
+        return true;		
     }
 }
