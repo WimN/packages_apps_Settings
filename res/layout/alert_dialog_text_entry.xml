@@ -41,7 +41,7 @@
         android:capitalize="none"
         android:gravity="fill_horizontal"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="?android:attr/textColorPrimaryInverse"
+        android:textColor="#ffffff"
         android:inputType="number" />
 
 </LinearLayout>
