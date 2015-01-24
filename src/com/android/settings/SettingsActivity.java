@@ -313,10 +313,10 @@ public class SettingsActivity extends Activity
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
             BlacklistSettings.class.getName(),
+            ProfilesSettings.class.getName(),            
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
 			QSTiles.class.getName(),
 			DisplayRotation.class.getName()
-            ProfilesSettings.class.getName(),
     };
 
 
