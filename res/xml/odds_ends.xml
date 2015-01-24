@@ -22,6 +22,12 @@
     <PreferenceCategory
         android:key="odds_ends"
         android:title="@string/odds_ends_settings" >	
+		
+    <!-- Pie control -->
+    <PreferenceScreen
+         android:key="pie_settings"
+         android:fragment="com.android.settings.validus.PieControl"
+         android:title="@string/pie_control_title" />
 	
     <!-- Circle app bar -->
     <PreferenceScreen
