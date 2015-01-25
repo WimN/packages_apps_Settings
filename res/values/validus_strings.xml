@@ -837,4 +837,9 @@
     <string name="icon_color_mode_system_icons">System icons</string>
     <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
 	
+    <!-- Status bar greeting -->
+    <string name="status_bar_greeting_title">Status bar greeting</string>
+    <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
+    <string name="status_bar_greeting_dialog">Set your greeting</string>
+	
 </resources>

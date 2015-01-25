@@ -15,9 +15,11 @@
  */
 package com.android.settings.crdroid;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -29,8 +31,10 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.text.Spannable;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 import com.android.internal.widget.LockPatternUtils;
 
@@ -50,7 +54,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-
+	private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
+	
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
@@ -60,6 +65,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mTicker;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
+    private SwitchPreference mStatusBarGreeting;
+
+    private String mCustomGreetingText = "";	
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -69,6 +77,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
+        mStatusBarGreeting = (CheckBoxPreference) findPreference(KEY_STATUS_BAR_GREETING);
+        mCustomGreetingText = Settings.System.getString(resolver, Settings.System.STATUS_BAR_GREETING);
+        boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
+        mStatusBarGreeting.setChecked(greeting);
+		
         PackageManager pm = getPackageManager();
         Resources systemUiResources;
         try {
@@ -131,6 +144,43 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
     }
+	
+     @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+       if (preference == mStatusBarGreeting) {
+           boolean enabled = mStatusBarGreeting.isChecked();
+           if (enabled) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+                alert.setTitle(R.string.status_bar_greeting_title);
+                alert.setMessage(R.string.status_bar_greeting_dialog);
+
+                // Set an EditText view to get user input
+                final EditText input = new EditText(getActivity());
+                input.setText(mCustomGreetingText != null ? mCustomGreetingText : "EXODUS");
+                alert.setView(input);
+                alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String value = ((Spannable) input.getText()).toString();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_GREETING, value);
+                        updateCheckState(value);
+                    }
+                });
+                alert.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // Canceled.
+                    }
+                });
+
+                alert.show();
+            } else {
+                Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_GREETING, "");
+            }
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }	
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
 	ContentResolver resolver = getActivity().getContentResolver();
@@ -178,6 +228,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
+    private void updateCheckState(String value) {
+		if (value == null || TextUtils.isEmpty(value)) mStatusBarGreeting.setChecked(false);
+	}
+	
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
         if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
                 batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
