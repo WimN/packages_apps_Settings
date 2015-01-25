@@ -246,14 +246,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             enableStatusBarBatteryDependents(batteryStyle);
             return true;
         } else if (preference == mCarrierColorPicker) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(objValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
             return true;
         } else if (preference == mStatusBarCarrier) {
-            boolean value = (Boolean) newValue;
+            boolean value = (Boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
             return true;			
