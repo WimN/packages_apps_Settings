@@ -17,6 +17,8 @@ package com.android.settings.crdroid;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.graphics.Color;
+import android.database.ContentObserver;
 import android.os.UserHandle;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -37,6 +39,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.android.internal.widget.LockPatternUtils;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
@@ -49,6 +52,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "StatusBarSettings";
 
     private static final String PREF_QUICK_PULLDOWN = "quick_pulldown";
+    private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
+    private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";	
     private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
@@ -58,7 +63,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 	
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
-
+    
+    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
+     	
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
     private SwitchPreference mBlockOnSecureKeyguard;
@@ -66,8 +73,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
     private SwitchPreference mStatusBarGreeting;
-
+    
+    SwitchPreference mStatusBarCarrier;
+    ColorPickerPreference mCarrierColorPicker;
+ 
     private String mCustomGreetingText = "";	
+	
+        int intColor;
+        String hexColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -81,6 +94,21 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mCustomGreetingText = Settings.System.getString(resolver, Settings.System.STATUS_BAR_GREETING);
         boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
         mStatusBarGreeting.setChecked(greeting);
+        
+        //carrier Label
+        mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+        mStatusBarCarrier.setOnPreferenceChangeListener(this);
+        
+        //carrier Label color
+        mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+        mCarrierColorPicker.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mCarrierColorPicker.setSummary(hexColor);
+        mCarrierColorPicker.setNewPreviewColor(intColor);		
 		
         PackageManager pm = getPackageManager();
         Resources systemUiResources;
@@ -217,6 +245,18 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
             enableStatusBarBatteryDependents(batteryStyle);
             return true;
+        } else if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
+            return true;
+        } else if (preference == mStatusBarCarrier) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
+            return true;			
         } else if (preference == mStatusBarBatteryShowPercent) {
             int batteryShowPercent = Integer.valueOf((String) objValue);
             int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) objValue);

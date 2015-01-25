@@ -841,5 +841,9 @@
     <string name="status_bar_greeting_title">Status bar greeting</string>
     <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
     <string name="status_bar_greeting_dialog">Set your greeting</string>
-	
+
+    <!-- carrier label -->
+    <string name="show_status_bar_carrier_title">Carrier label</string>
+    <string name="show_status_bar_carrier_summary">Shows carrier label in status bar</string>
+    <string name="status_bar_carrier_color">Carrier label Color</string>	
 </resources>
