@@ -28,9 +28,6 @@
 	<string name="animation_settings_category">Animations</string>
 	<string name="animation_settings_title">Animations</string>
 
-    <!--Device Control-->
-    <string name="device_control_title">Device Control</string>
-	
     <!-- About phone screen, build date -->
     <string name="build_date">Build Date</string>
     <string name="build_date_default">2014-01-01-0000</string>

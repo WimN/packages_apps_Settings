@@ -183,9 +183,6 @@
                 android:value="com.example.myfirstapp.MainActivity" />
         </activity>
 		
-        <!-- Device Control Activity -->
-        <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>        
-		
 		<!-- Animations Settings -->		
         <activity
             android:name=".fragments.AnimationControls"
