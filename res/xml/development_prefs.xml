@@ -31,6 +31,11 @@
         android:key="system_app_remover"
         android:title="@string/system_app_remover"
         android:fragment="com.android.settings.validus.SystemappRemover" />
+		
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary" />		
 	
     <SwitchPreference
         android:key="advanced_reboot"

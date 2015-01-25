@@ -846,4 +846,8 @@
     <string name="show_status_bar_carrier_title">Carrier label</string>
     <string name="show_status_bar_carrier_summary">Shows carrier label in status bar</string>
     <string name="status_bar_carrier_color">Carrier label Color</string>	
+	
+    <!-- Text for forcing expanded notifications -->
+    <string name="disable_fc_notifications_title">Diable FC Notifications</string>
+    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>	
 </resources>
