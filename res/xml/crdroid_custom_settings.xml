@@ -27,6 +27,12 @@
          android:fragment="com.android.settings.crdroid.StatusBarSettings"
          android:title="@string/status_bar_title"/>
 		 
+    <!-- crDroid lockscreen -->
+    <PreferenceScreen
+         android:key="lockscreen_crdroid"
+         android:fragment="com.android.settings.crdroid.LockScreenSettings"
+         android:title="@string/crdroid_lockscreen_title" />
+		 
     <!-- Display -->
     <PreferenceScreen
          android:key="display_settings"
@@ -38,12 +44,6 @@
          android:key="recents_panel"
          android:fragment="com.android.settings.crdroid.RecentsPanelSettings"
          android:title="@string/recents_panel_title"/>
-		 
-    <!-- Lockscreen Settings -->
-    <PreferenceScreen
-         android:key="lock_crdroid"
-         android:title="@string/crdroid_lock_title"
-         android:fragment="com.android.settings.crdroid.LockcrDroid" />
 
     <!-- Animation settings -->
     <PreferenceScreen

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2008 The Android Ice Cold Project
+<!-- Copyright (C) 2015 crDroid Android
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,65 +14,43 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/crdroid_lock_title"
-        android:key="lock_screen">
+<PreferenceScreen 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:title="@string/crdroid_lockscreen_title">
 
     <PreferenceCategory
-        android:key="lockscreen_category"
-        android:title="@string/lockscreen_category" >
+        android:key="lockscreen_shortcuts_category"
+        android:title="@string/crdroid_lockscreen_shortcuts_category" >
 
-        <!-- Disable camera swipe -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-            android:key="camera_widget_hide"
-            android:title="@string/camera_widget_hide"
-            android:summary="@string/camera_widget_hide_summary" />
-
-        <!-- Disable dialer swipe -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-            android:key="dialer_widget_hide"
-            android:title="@string/dialer_widget_hide"
-            android:summary="@string/dialer_widget_hide_summary" />
-			
         <PreferenceScreen
-            android:key="lock_clock_clock_section"
-            android:title="@string/lock_clock_clock_section_title"
-            android:summary="@string/lock_clock_clock_section_summary" >
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences"
-                android:targetPackage="com.cyanogenmod.lockclock" >
-                <extra android:name=":android:show_fragment"
-                    android:value="com.cyanogenmod.lockclock.preference.ClockPreferences" />
-            </intent>
+                 android:key="slim_lockscreen_shortcuts"
+                 android:fragment="com.android.settings.crdroid.dslv.ActionListViewSettings"
+                 android:summary="@string/lockscreen_shortcuts_summary"
+                 android:title="@string/lockscreen_shortcuts_title">
+             <extra android:name="actionMode" android:value="4" />
+             <extra android:name="maxAllowedActions" android:value="5" />
+             <extra android:name="disableLongpress" android:value="true" />
+             <extra android:name="useAppPickerOnly" android:value="true" />
+             <extra android:name="fragment" android:value="com.android.settings.crdroid.fragments.LockscreenShortcutFragment" />
         </PreferenceScreen>
 
         <PreferenceScreen
-            android:key="lock_clock_weather_section"
-            android:title="@string/lock_clock_weather_section_title"
-            android:summary="@string/lock_clock_weather_section_summary" >
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences"
-                android:targetPackage="com.cyanogenmod.lockclock" >
-                <extra android:name=":android:show_fragment"
-                    android:value="com.cyanogenmod.lockclock.preference.WeatherPreferences" />
-            </intent>
-        </PreferenceScreen>
+            android:key="cm_lockscreen_shortcuts"
+            android:fragment="com.android.settings.cyanogenmod.LockscreenShortcuts"
+            android:title="@string/cm_lockscreen_shortcuts_title"
+            android:summary="@string/cm_lockscreen_shortcuts_summary" />
 
-        <PreferenceScreen
-            android:key="lock_clock_calendar_section"
-            android:title="@string/lock_clock_calendar_section_title"
-            android:summary="@string/lock_clock_calendar_section_summary" >
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences"
-                android:targetPackage="com.cyanogenmod.lockclock" >
-                <extra android:name=":android:show_fragment"
-                    android:value="com.cyanogenmod.lockclock.preference.CalendarPreferences" />
-            </intent>
-        </PreferenceScreen>			
-
-   </PreferenceCategory>
+    </PreferenceCategory>
+	
+   <!-- LockClock settings -->
+   <PreferenceScreen
+        android:key="lock_clock"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.cyanogenmod.lockclock"
+            android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+        </PreferenceScreen>	
 
 </PreferenceScreen>
