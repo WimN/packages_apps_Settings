@@ -55,8 +55,8 @@ import com.android.internal.util.validus.NavbarUtils;
 
 import com.android.settings.R;
 import com.android.settings.validus.navbar.SettingsButtonInfo;
-import com.android.settings.crdroid.util.ShortcutPickerHelper;
-import com.android.settings.crdroid.util.ShortcutPickerHelper.OnPickListener;
+import com.android.settings.slim.util.ShortcutPickerHelper;
+import com.android.settings.slim.util.ShortcutPickerHelper.OnPickListener;
 import com.android.settings.validus.util.DragGripView;
 import com.android.settings.validus.util.SwipeDismissListViewTouchListener;
 import com.android.settings.validus.util.DragSortController;
