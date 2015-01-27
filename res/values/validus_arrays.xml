@@ -638,7 +638,6 @@
         <item>@string/screen_recorder_bitrate_20000000</item>
     </string-array>
 	
-<<<<<<< HEAD
     <string-array name="navbar_dialog_entries" translatable="false">
 	<item>@string/action_short</item>
 	<item>@string/action_long</item>
