@@ -743,7 +743,6 @@
     <string name="dpi">DPI</string>
     <string name="custom_density_warning">Restart the system and apply selected density?</string>
 
-<<<<<<< HEAD:res/values/validus_strings.xml
     <!-- Pie control -->
     <string name="pie_control_title">Pie control</string>
     <string name="pie_control_summary">Enable pie on screen navigation</string>
