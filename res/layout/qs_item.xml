@@ -25,7 +25,6 @@
         android:layout_height="match_parent"
 		android:background="@*android:color/material_blue_grey"
         android:gravity="center"
-		android:background="@*android:color/darkkat_blue_grey"
         android:orientation="vertical"
         android:padding="4dp">
 
