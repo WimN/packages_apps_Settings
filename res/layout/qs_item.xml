@@ -23,7 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-		android:background="@*android:color/material_blue_grey"
+		android:background="#4D4F56"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="4dp">
