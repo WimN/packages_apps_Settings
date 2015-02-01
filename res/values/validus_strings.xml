@@ -827,4 +827,9 @@
     <string name="wifi_ibss_freq_title">Channel / Frequency</string>
     <string name="wifi_channel">Channel</string>
     <string name="wifi_mhz">MHz</string>	
+	
+    <!-- Changelog -->
+    <string name="changelog_validus_title">Changelog</string>
+    <string name="changelog_validus_error">Unable to load changelog</string>
+	
 </resources>
