@@ -833,6 +833,7 @@
     <string name="changelog_validus_error">Unable to load changelog</string>
 
 	<!-- Additional Quicktiles -->
+    <string name="qs_four_columns_title">Show four tiles per row</string>	
     <string name="qs_screenshot_tile">Screenshot</string>
     <string name="qs_sync_tile">Sync</string>	
 </resources>
