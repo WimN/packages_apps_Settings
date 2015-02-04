@@ -52,7 +52,6 @@ public class NavRing extends Fragment implements View.OnClickListener {
         mSave.setOnClickListener(this);
         mRestore = (LinearLayout) view.findViewById(R.id.navbar_restore);
         mRestore.setOnClickListener(this);
-        child.setBackgroundColor(0xff424242);
     }
 
     @Override
