@@ -50,4 +50,10 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     @Override
     public void onSharedPreferenceChanged(SharedPreferences preferences, String key) {
     }
+	
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        return false;
+    }
+	
 }
