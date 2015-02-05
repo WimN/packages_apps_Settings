@@ -131,7 +131,7 @@
                 <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
             </intent>
         </dashboard-tile>
-
+		
     </dashboard-category>
 
     <!-- DEVICE -->
@@ -324,6 +324,13 @@
                 android:icon="@drawable/ic_settings_print"
                 />
 
+        <!-- PerformanceControl -->
+        <dashboard-tile
+                android:id="@+id/performance_controls"
+                android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
+                android:icon="@drawable/ic_settings_performance"
+                android:title="@string/performance_settings" />				
+				
         <!-- Performance -->
         <dashboard-tile
                 android:id="@+id/performance_settings"

@@ -35,6 +35,14 @@ LOCAL_AAPT_FLAGS := \
     --extra-packages android.support.v7.cardview
 
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
+LOCAL_AAPT_FLAGS += --auto-add-overlay \
+                    --extra-packages com.brewcrewfoo.performance
+					
+LOCAL_SRC_FILES += $(call all-java-files-under, ../PerformanceControl/src)
+
+LOCAL_ASSET_DIR += packages/apps/PerformanceControl/assets
+
+LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, ../PerformanceControl/res res)					
 
 LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
 

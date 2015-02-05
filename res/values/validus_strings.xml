@@ -24,6 +24,8 @@
     <string name="validus_version_title">Validus Version</string>
     <string name="validus_version_default">Unknown</string>
 	
+    <string name="performance_settings">Omni Performance</string>
+	
 	<!-- Animation Strings -->
 	<string name="animation_settings_category">Animations</string>
 	<string name="animation_settings_title">Animations</string>
