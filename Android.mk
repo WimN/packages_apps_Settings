@@ -32,12 +32,11 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
-    --extra-packages android.support.v7.cardview
+    --extra-packages android.support.v7.cardview \
+    --extra-packages com.brewcrewfoo.performance
 
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
-LOCAL_AAPT_FLAGS += --auto-add-overlay \
-                    --extra-packages com.brewcrewfoo.performance
-					
+
 LOCAL_SRC_FILES += $(call all-java-files-under, ../PerformanceControl/src)
 
 LOCAL_ASSET_DIR += packages/apps/PerformanceControl/assets
