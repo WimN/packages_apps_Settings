@@ -37,12 +37,6 @@ LOCAL_AAPT_FLAGS := \
 
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 
-LOCAL_SRC_FILES += $(call all-java-files-under, ../PerformanceControl/src)
-
-LOCAL_ASSET_DIR += packages/apps/PerformanceControl/assets
-
-LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, ../PerformanceControl/res res)					
-
 LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
 
 include frameworks/opt/setupwizard/navigationbar/common.mk
