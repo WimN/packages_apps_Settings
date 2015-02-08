@@ -50,4 +50,5 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     @Override
     public void onSharedPreferenceChanged(SharedPreferences preferences, String key) {
     }
+	
 }

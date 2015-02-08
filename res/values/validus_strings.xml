@@ -40,6 +40,12 @@
     <string name="reset">Reset</string>
     <string name="default_string">Default</string>
     <string name="help">Help</string>
+	<string name="more_string">More</string>
+    <string name="color_title">Color</string>
+    <string name="colors_title">Colors</string>
+    <string name="category_colors_title">Customize colors</string>
+    <string name="icons_title">Icons</string>
+    <string name="text_title">Text</string>
 
     <!-- Validus custom settings -->
     <string name="crdroid_custom_title">The Void</string>
@@ -836,4 +842,33 @@
     <string name="qs_four_columns_title">Show four tiles per row</string>	
     <string name="qs_screenshot_tile">Screenshot</string>
     <string name="qs_sync_tile">Sync</string>	
+    
+   <!-- Lock screen -->
+    <string name="lock_screen_weather_settings_title">Weather</string>
+    <string name="lock_screen_weather_settings_summary">Customize Weather</string>
+    <string name="lock_screen_color_settings_summary">Customize colors</string>
+
+   <!-- Weather settings -->
+    <string name="weather_show_weather_title">Show weather</string>
+    <string name="weather_show_weather_summary">Enable to show weather informations</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Enable to show the location</string>
+    <string name="weather_show_timestamp_title">Show timestamp</string>
+    <string name="weather_show_timestamp_summary">Enable to show the timestamp</string>
+    <string name="weather_condition_icon_title">Condition icon</string>
+    <string name="weather_condition_icon_dlg_title">Coose an icon for displaying the weather condition</string>
+    <string name="weather_condition_icon_monochrome_title">Monochrome</string>
+    <string name="weather_condition_icon_colored_title">Colored</string>
+    <string name="weather_condition_icon_vclouds_title">VClouds</string>
+    <string name="weather_colorize_all_icons_title">Colorize all icons</string>
+    <string name="weather_colorize_all_icons_summary">Enable to colorize all icons, disable to colorize only the monochrome icons</string>    	
+
+    <string name="dlg_reset_values_message">Reset values to\nAndroid- or Bliss default?</string>
+    <string name="dlg_reset_android">Android</string>
+    <string name="dlg_reset_bliss">Validus</string>	
+
+    <!-- Captive Portal -->
+    <string name="captive_portal_detection">Captive portal detection</string>
+    <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>
+
 </resources>
