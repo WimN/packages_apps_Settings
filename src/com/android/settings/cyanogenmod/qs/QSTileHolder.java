@@ -121,6 +121,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_perf_profile_highperf_avd";
                 stringId = R.string.qs_tile_performance;
                 break;
+            case QSConstants.TILE_POWERMENU:
+                resourceName = "ic_qs_powermenu";
+                stringId = R.string.qs_tile_powermenu;
+                break;
             case QSConstants.TILE_NFC:
                 resourceName = "ic_qs_nfc_on";
                 stringId = R.string.qs_tile_nfc;
@@ -148,6 +152,26 @@ public class QSTileHolder {
             case QSConstants.TILE_SYNC:
                 resourceName = "ic_qs_sync_on";
                 stringId = R.string.qs_sync_tile;
+                break;
+            case QSConstants.TILE_HEADS_UP:
+                resourceName = "ic_qs_heads_up_on";
+                stringId = R.string.qs_tile_headsup;
+                break;
+            case QSConstants.TILE_BATTERY_SAVER:
+                resourceName = "ic_qs_battery_saver_on";
+                stringId = R.string.qs_battery_saver_tile;
+                break;
+            case QSConstants.TILE_BRIGHTNESS:
+                resourceName = "ic_qs_brightness_auto_off";
+                stringId = R.string.qs_brightness_tile;
+                break;
+            case QSConstants.TILE_EXPANDED_DESKTOP:
+                resourceName = "ic_qs_expanded_desktop";
+                stringId = R.string.qs_expanded_desktop_tile;
+                break;
+            case QSConstants.TILE_SCREEN_OFF:
+                resourceName = "ic_qs_screen_off";
+                stringId = R.string.qs_screen_off_tile;
                 break;
             default:
                 return null;
