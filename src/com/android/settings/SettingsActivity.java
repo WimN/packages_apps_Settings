@@ -71,10 +71,12 @@ import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.accessibility.CaptionPropertiesFragment;
 import com.android.settings.accounts.AccountSettings;
 import com.android.settings.accounts.AccountSyncSettings;
+import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
+import com.android.settings.headsup.HeadsUpSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.cyanogenmod.DisplayRotation;
 import com.android.settings.cyanogenmod.qs.QSTiles;
@@ -312,11 +314,13 @@ public class SettingsActivity extends Activity
             OtherSoundSettings.class.getName(),
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
+	    HeadsUpSettings.class.getName(),
             BlacklistSettings.class.getName(),
             ProfilesSettings.class.getName(),            
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
-			QSTiles.class.getName(),
-			DisplayRotation.class.getName()
+	    QSTiles.class.getName(),
+	    DisplayRotation.class.getName(),
+            ExpandedDesktopPreferenceFragment.class.getName()	    
     };
 
 
