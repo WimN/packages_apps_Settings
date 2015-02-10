@@ -12,10 +12,16 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := \
         $(call all-java-files-under, src) \
-        src/com/android/settings/EventLogTags.logtags
+        src/com/android/settings/EventLogTags.logtags \
+        $(call all-java-files-under,../../../packages/apps/PerformanceControl/src)
 
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
-    frameworks/support/v7/cardview/res
+LOCAL_RESOURCE_DIR := \
+        $(LOCAL_PATH)/res \
+        $(LOCAL_PATH)/../../../packages/apps/PerformanceControl/res \
+        frameworks/support/v7/cardview/res
+
+LOCAL_ASSET_DIR += \
+        $(LOCAL_PATH)/../../../packages/apps/PerformanceControl/assets
 
 LOCAL_SRC_FILES += \
         src/com/android/location/XT/IXTSrv.aidl \
@@ -36,12 +42,6 @@ LOCAL_AAPT_FLAGS := \
     --extra-packages com.brewcrewfoo.performance
 
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
-
-LOCAL_SRC_FILES += $(call all-java-files-under, ../PerformanceControl/src)
-
-LOCAL_ASSET_DIR += packages/apps/PerformanceControl/assets
-
-LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, ../PerformanceControl/res res)					
 
 LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
 
