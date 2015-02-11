@@ -117,10 +117,6 @@ public class QSTileHolder {
                 resourceName = "ic_qs_system_profiles";
                 stringId = R.string.qs_tile_profiles;
                 break;
-            case QSConstants.TILE_PERFORMANCE:
-                resourceName = "ic_qs_perf_profile_highperf_avd";
-                stringId = R.string.qs_tile_performance;
-                break;
             case QSConstants.TILE_POWERMENU:
                 resourceName = "ic_qs_powermenu";
                 stringId = R.string.qs_tile_powermenu;
