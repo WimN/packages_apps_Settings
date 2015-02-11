@@ -890,4 +890,6 @@
     <string name="heads_up_touch_outside_title">Touch outside behavior</string>
     <string name="heads_up_touch_outside_summary_enabled">Hide notification on touch outside and on home button press</string>
     <string name="heads_up_touch_outside_summary_disabled">Do not hide notification after touch outside or on home button press</string>
+
+    <string name="weather_settings_title">Weather</string>
 </resources>
