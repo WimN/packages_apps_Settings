@@ -2228,6 +2228,7 @@
             <intent-filter android:priority="2147483647">$
                 <action android:name="android.intent.action.BOOT_COMPLETED" />$
             </intent-filter>$
+         </receiver>
 
         <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
         <receiver android:name=".users.ProfileUpdateReceiver">
@@ -2333,4 +2334,5 @@
             </intent-filter>
         </receiver>
 		
+    </application>
 </manifest>
