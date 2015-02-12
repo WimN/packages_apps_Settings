@@ -495,8 +495,6 @@
             </intent-filter>
         </activity>
 
-	<activity android:name=".darkkat.WeatherSettings" />
-
         <activity android:name="Settings$LocalePickerActivity"
                 android:label="@string/language_picker_title"
                 android:taskAffinity="com.android.settings"
