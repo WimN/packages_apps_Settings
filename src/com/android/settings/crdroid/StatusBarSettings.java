@@ -85,6 +85,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.status_bar_settings);
 
+        PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
         mStatusBarGreeting = (SwitchPreference) findPreference(KEY_STATUS_BAR_GREETING);
