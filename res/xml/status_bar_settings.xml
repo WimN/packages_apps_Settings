@@ -78,13 +78,6 @@
 			android:defaultValue="0xffffffff"
 			android:dependency="status_bar_carrier" />	                                
 
-        <SwitchPreference
-            android:key="status_bar_ticker_enabled"
-            android:title="@string/status_bar_ticker_title"
-            android:summary="@string/status_bar_ticker_summary"
-			android:defaultValue="true" 
-			android:persistent="true" />
-
 		<SwitchPreference
 			android:key="status_bar_greeting"
 			android:title="@string/status_bar_greeting_title"
