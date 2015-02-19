@@ -953,4 +953,5 @@
     <string name="pocket_only_mode">Pocket</string>
     <string name="shake_pulse_mode">Shake and pulse</string>
     <string name="pulse_only_mode">Pulse (default)</string>
+
 </resources>
