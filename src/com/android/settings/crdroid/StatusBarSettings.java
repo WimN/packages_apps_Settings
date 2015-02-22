@@ -58,7 +58,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-	private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
+    private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
+    private static final String PREF_QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
 	
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -71,6 +72,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
     private SwitchPreference mStatusBarGreeting;
+    private SwitchPreference mBrightnessSlider;
     
     SwitchPreference mStatusBarCarrier;
     ColorPickerPreference mCarrierColorPicker;
@@ -117,6 +119,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
         mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
         updateQuickPulldownSummary(statusQuickPulldown);
+
+        // Brightness slider
+        mBrightnessSlider = (SwitchPreference) prefs.findPreference(PREF_QS_SHOW_BRIGHTNESS_SLIDER);
+        mBrightnessSlider.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+            Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1) == 1);
+        mBrightnessSlider.setOnPreferenceChangeListener(this);
+        int brightnessSlider = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1);
+        updateBrightnessSliderSummary(brightnessSlider);
 
         // Smart Pulldown
         mSmartPulldown.setOnPreferenceChangeListener(this);
@@ -208,6 +219,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     smartPulldown);
             updateSmartPulldownSummary(smartPulldown);
             return true;
+        } else if (preference == mBrightnessSlider) {
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
+                    (Boolean) newValue ? 1 : 0);
+            int brightnessSlider = Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1);
+            updateBrightnessSliderSummary(brightnessSlider);
+            return true;
         } else if (preference == mBlockOnSecureKeyguard) {
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD,
@@ -298,5 +317,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
         }
     }
-	
+
+    private void updateBrightnessSliderSummary(int value) {
+        String summary = value != 0
+                ? getResources().getString(R.string.qs_brightness_slider_enabled)
+                : getResources().getString(R.string.qs_brightness_slider_disabled);
+        mBrightnessSlider.setSummary(summary);
+    }	
 }

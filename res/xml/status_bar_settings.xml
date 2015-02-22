@@ -84,6 +84,12 @@
 			android:summary="@string/status_bar_greeting_summary"			
             android:defaultValue="true" />
 
+       <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="qs_show_brightness_slider"
+            android:title="@string/qs_brightness_slider_title"
+            android:persistent="false"	    
+            android:defaultValue="true"/>
+
         <ListPreference
             android:key="quick_pulldown"
             android:title="@string/title_quick_pulldown"
