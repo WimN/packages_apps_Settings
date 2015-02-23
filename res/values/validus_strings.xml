@@ -803,16 +803,20 @@
     <string name="icon_color_mode_all_icons">All icons</string>
     <string name="icon_color_mode_system_icons">System icons</string>
     <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
+
+    <!-- Show carrier label and custom -->
+    <string name="carrier_options">Carrier Label</string>
+    <string name="show_status_bar_carrier_title">Status bar carrier</string>
+    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="status_bar_carrier_color">Carrier label color</string>
 	
     <!-- Status bar greeting -->
     <string name="status_bar_greeting_title">Status bar greeting</string>
     <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
-    <string name="status_bar_greeting_dialog">Set your greeting</string>
-
-    <!-- carrier label -->
-    <string name="show_status_bar_carrier_title">Carrier label</string>
-    <string name="show_status_bar_carrier_summary">Shows carrier label in status bar</string>
-    <string name="status_bar_carrier_color">Carrier label Color</string>	
+    <string name="status_bar_greeting_dialog">Set your greeting</string>	
 	
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
