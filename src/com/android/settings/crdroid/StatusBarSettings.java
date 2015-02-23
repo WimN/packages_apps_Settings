@@ -121,7 +121,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         updateQuickPulldownSummary(statusQuickPulldown);
 
         // Brightness slider
-        mBrightnessSlider = (SwitchPreference) prefs.findPreference(PREF_QS_SHOW_BRIGHTNESS_SLIDER);
+        mBrightnessSlider = (SwitchPreference) prefSet.findPreference(PREF_QS_SHOW_BRIGHTNESS_SLIDER);
         mBrightnessSlider.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
             Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1) == 1);
         mBrightnessSlider.setOnPreferenceChangeListener(this);
@@ -222,7 +222,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         } else if (preference == mBrightnessSlider) {
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
-                    (Boolean) newValue ? 1 : 0);
+                    (Boolean) objValue ? 1 : 0);
             int brightnessSlider = Settings.Secure.getInt(getContentResolver(),
                     Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1);
             updateBrightnessSliderSummary(brightnessSlider);
