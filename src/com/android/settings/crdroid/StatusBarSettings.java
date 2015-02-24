@@ -82,15 +82,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
         mStatusBarGreeting.setChecked(greeting);
 
-        // Quick Pulldown
+	// Quick Pulldown
+        mQuickPulldown = (ListPreference) findPreference(PREF_QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
         int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
         mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
         updateQuickPulldownSummary(statusQuickPulldown);
-
-        mQuickPulldown = (ListPreference) findPreference(PREF_QUICK_PULLDOWN);
-        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
 
         // Brightness slider
         mBrightnessSlider = (SwitchPreference) prefSet.findPreference(PREF_QS_SHOW_BRIGHTNESS_SLIDER);
@@ -102,6 +100,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         updateBrightnessSliderSummary(brightnessSlider);
 
         // Smart Pulldown
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
         mSmartPulldown.setOnPreferenceChangeListener(this);
         int smartPulldown = Settings.System.getInt(getContentResolver(),
                 Settings.System.QS_SMART_PULLDOWN, 0);
