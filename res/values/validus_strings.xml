@@ -872,9 +872,11 @@
     <string name="weather_colorize_all_icons_title">Colorize all icons</string>
     <string name="weather_colorize_all_icons_summary">Enable to colorize all icons, disable to colorize only the monochrome icons</string>    	
 
-    <string name="dlg_reset_values_message">Reset values to\nAndroid- or Bliss default?</string>
+    <string name="dlg_reset_values_message">Reset values to\nAndroid- or Validus default?</string>
     <string name="dlg_reset_android">Android</string>
-    <string name="dlg_reset_bliss">Validus</string>	
+    <string name="dlg_reset_bliss">Validus</string>
+    <string name="reset_android">Android</string>
+    <string name="reset_validus">Validus</string>	
 
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
