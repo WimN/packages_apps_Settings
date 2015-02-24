@@ -974,4 +974,8 @@
     <!-- QS Custom Colors -->
     <string name="qs_colors_title">Custom Color Options</string>
     
+    <!-- Statusbar AICP logo -->
+    <string name="status_bar_validus_logo_title">Validus logo</string>
+    <string name="status_bar_validus_logo_summary">Enable to show Validus logo on the left side of statusbar</string>
+
 </resources>
