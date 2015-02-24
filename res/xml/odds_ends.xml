@@ -25,7 +25,7 @@
 
     <PreferenceScreen
         android:key="carrier_options"
-        android:fragment="com.android.setings.validus.CarrierLabel"
+        android:fragment="com.android.settings.validus.CarrierLabel"
         android:title="@string/carrier_options" />
 		
     <!-- Pie control -->
