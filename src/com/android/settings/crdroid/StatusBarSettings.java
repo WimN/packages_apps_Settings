@@ -89,6 +89,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
         updateQuickPulldownSummary(statusQuickPulldown);
 
+        mQuickPulldown = (ListPreference) findPreference(PREF_QUICK_PULLDOWN);
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+
         // Brightness slider
         mBrightnessSlider = (SwitchPreference) prefSet.findPreference(PREF_QS_SHOW_BRIGHTNESS_SLIDER);
         mBrightnessSlider.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
