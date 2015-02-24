@@ -22,6 +22,11 @@
     <PreferenceCategory
         android:key="odds_ends"
         android:title="@string/odds_ends_settings" >	
+
+    <PreferenceScreen
+        android:key="carrier_options"
+        android:fragment="com.android.setings.validus.CarrierLabel"
+        android:title="@string/carrier_options" />
 		
     <!-- Pie control -->
     <PreferenceScreen
