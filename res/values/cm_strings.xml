@@ -1025,6 +1025,10 @@
     <string name="heads_up_blacklist_title">Blacklist</string>
     <string name="heads_up_disabled_notice">To allow applications to display interactive notifications in a pop-up window on your screen, enable Heads up.</string>
 
+    <!-- IC Codes -->
+    <string name="ic_code_model">Model: %1$s</string>
+    <string name="ic_code_full">IC: %1$s</string>
+
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
     <string name="expanded_hide_status">Hide status bar</string>
