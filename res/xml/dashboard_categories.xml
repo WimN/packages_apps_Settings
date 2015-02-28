@@ -46,7 +46,7 @@
                 android:icon="@drawable/ic_sim_sd"
                 />
 
-        <!-- Mobile networks -->
+        <!-- Mobile networks
         <dashboard-tile
                 android:id="@+id/mobile_networks"
                 android:title="@string/network_settings_title"
@@ -55,7 +55,7 @@
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.phone"
                     android:targetClass="com.android.phone.MobileNetworkSettings" />
-        </dashboard-tile>
+        </dashboard-tile> -->
 
         <!-- MSIM Mobile networks -->
         <!-- TARGET_THEME is located in packages/services/Telephony -->
