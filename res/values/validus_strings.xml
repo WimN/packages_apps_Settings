@@ -921,7 +921,6 @@
     <string name="task_open_behind_title">Task open behind animation</string>
     <string name="animation_duration_title">Animation duration</string>
     <string name="animation_duration_default">Default</string>
->>>>>>> aa7bee8... QSColor: Improvements - transparent shade (2/2):res/values/strings_aicp.xml
 
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Volume key Answer</string>
