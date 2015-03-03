@@ -851,6 +851,7 @@
     <string name="qs_brightness_tile">Brightness</string>
     <string name="qs_expanded_desktop_tile">Expanded desktop</string>
     <string name="qs_screen_off_tile">Screen off</string>
+    <string name="qs_ambient_display_tile">Ambient display</string>
     
    <!-- Lock screen -->
     <string name="lock_screen_weather_settings_title">Weather</string>

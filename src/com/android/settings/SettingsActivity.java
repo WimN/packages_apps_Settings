@@ -119,6 +119,7 @@ import com.android.settings.wfd.WifiDisplaySettings;
 import com.android.settings.widget.SwitchBar;
 import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.SavedAccessPointsWifiSettings;
+import com.android.settings.validus.AmbientSettings;
 import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
@@ -318,7 +319,8 @@ public class SettingsActivity extends Activity
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
 	    QSTiles.class.getName(),
 	    DisplayRotation.class.getName(),
-            ExpandedDesktopPreferenceFragment.class.getName()	    
+            ExpandedDesktopPreferenceFragment.class.getName()	
+            AmbientSettings.class.getName()    
     };
 
 
