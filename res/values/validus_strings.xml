@@ -998,6 +998,8 @@
     <string name="qs_colors_title">Custom Color Options</string>
     <string name="qs_transparent_shade_title">Alpha Shade</string>
     <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent.</string>
+    <string name="qs_color_switch_title">Custom color switch</string>
+    <string name="qs_color_switch_summary">SystemUI will be restarted!</string>
     
     <!-- Statusbar AICP logo -->
     <string name="status_bar_validus_logo_title">Validus logo</string>
