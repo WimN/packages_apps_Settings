@@ -319,7 +319,7 @@ public class SettingsActivity extends Activity
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
 	    QSTiles.class.getName(),
 	    DisplayRotation.class.getName(),
-            ExpandedDesktopPreferenceFragment.class.getName()	
+            ExpandedDesktopPreferenceFragment.class.getName(),	
             AmbientSettings.class.getName()    
     };
 
