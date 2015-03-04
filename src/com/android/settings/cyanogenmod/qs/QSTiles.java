@@ -216,10 +216,8 @@ public class QSTiles extends Fragment implements
         if (item == null) {
             return null;
         }
-        ColoringCardView qsTile = (ColoringCardView) getLayoutInflater(null)
-                .inflate(R.layout.qs_item, null);
-        int defaultColor = getResources().getColor(R.color.qs_tile_default_background_color);
-        qsTile.setColor(defaultColor);
+        View qsTile = getLayoutInflater(null).inflate(R.layout.qs_item, null);
+
         if (item.name != null) {
             ImageView icon = (ImageView) qsTile.findViewById(android.R.id.icon);
             Drawable d = Utils.getNamedDrawable(mSystemUiContext, item.resourceName);
