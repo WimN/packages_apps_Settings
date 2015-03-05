@@ -225,8 +225,7 @@ public class QSColors extends SettingsPreferenceFragment implements
                                     Settings.System.QS_ICON_COLOR,
                                     VALIDUS_TEAL);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_TEXT_COLOR,
-                                    VALIDUS_TEAL);
+                                    Settings.System.QS_TEXT_COLOR, WHITE);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.QS_TRANSPARENT_SHADE, 0);
                             getOwner().refreshSettings();
