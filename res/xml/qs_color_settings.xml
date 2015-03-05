@@ -35,13 +35,13 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="qs_background_color"
             android:title="@string/background_title"
-            android:defaultValue="0x000000"
+            android:defaultValue="0xff263238"
             android:dependency="qs_color_switch" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="qs_icon_color"
             android:title="@string/icon_title"
-            android:defaultValue="0xff009688"
+            android:defaultValue="0xffffffff"
             android:dependency="qs_color_switch" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
