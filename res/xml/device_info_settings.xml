@@ -50,7 +50,13 @@
             android:key="share"
             android:title="@string/share_crdroid_title"
             android:summary="@string/share_crdroid_summary" />
-
+        
+        <!-- Advanced mode -->
+        <SwitchPreference
+                android:key="advanced_mode"
+                android:title="@string/advanced_mode_title"
+                android:summary="@string/advanced_mode_summary"/>
+         
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"

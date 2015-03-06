@@ -35,6 +35,7 @@ import android.os.UserManager;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -89,6 +90,11 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_VALIDUS_VERSION = "validus_version";
     private static final String KEY_CRDROID_SHARE = "share";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
+    
+    public static final String PREFS_FILE = "device";
+    public static final String KEY_ADVANCED_MODE = "advanced_mode";
+
+    SwitchPreference mAdvancedSettings;
 
     long[] mHits = new long[3];
 
@@ -196,6 +202,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 getPreferenceScreen().removePreference(pref);
             }
         }
+        mAdvancedSettings = (SwitchPreference) findPreference(KEY_ADVANCED_MODE);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mAdvancedSettings.setChecked(SettingsActivity.showAdvancedPreferences(getActivity()));
     }
 
     @Override
@@ -214,6 +227,14 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                     Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
                 }
             }
+            
+        } else if (preference.getKey().equals(KEY_ADVANCED_MODE)) {
+            final boolean isEnabled = mAdvancedSettings.isChecked();
+            getActivity().getSharedPreferences(PREFS_FILE, 0)
+                    .edit()
+                    .putBoolean(KEY_ADVANCED_MODE, isEnabled)
+                    .apply();
+             
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
         } else if (prefKey.equals(KEY_KERNEL_VERSION)) {
