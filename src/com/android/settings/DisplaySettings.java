@@ -132,6 +132,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
         mCmHardwareManager = (CmHardwareManager) activity.getSystemService(Context.CMHW_SERVICE);
 
+        mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
+        if (displayPrefs != null && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+            displayPrefs.removePreference(mTapToWake);
+            mTapToWake = null;
+         }
+
         addPreferencesFromResource(R.xml.display_settings);
 
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
@@ -191,12 +197,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
 
         PreferenceScreen advancedPrefs = (PreferenceScreen) findPreference(CATEGORY_ADVANCED);
-
-        mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
-        if (!mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE()) {
-            advancedPrefs.removePreference(mTapToWake);
-            mTapToWake = null;
-        }
 
     private static boolean allowAllRotations(Context context) {
         return Resources.getSystem().getBoolean(
