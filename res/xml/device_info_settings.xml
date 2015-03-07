@@ -35,6 +35,12 @@
          android:key="translator"
          android:title="@string/changelog_validus_title"
          android:fragment="com.android.settings.validus.Changelog" />
+
+        <!-- Advanced mode -->
+        <SwitchPreference
+                android:key="advanced_mode"
+                android:title="@string/advanced_mode_title"
+                android:summary="@string/advanced_mode_summary"/>
 		
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
@@ -51,12 +57,6 @@
             android:title="@string/share_crdroid_title"
             android:summary="@string/share_crdroid_summary" />
         
-        <!-- Advanced mode -->
-        <SwitchPreference
-                android:key="advanced_mode"
-                android:title="@string/advanced_mode_title"
-                android:summary="@string/advanced_mode_summary"/>
-         
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"
@@ -87,12 +87,6 @@
                     android:title="@string/terms_title">
                 <intent android:action="android.settings.TERMS" />
             </PreferenceScreen>
-
-            <Preference
-                    android:key="wallpaper_attributions"
-                    android:title="@string/wallpaper_attributions"
-                    android:summary="@string/wallpaper_attributions_values"
-                    />
 
         </PreferenceScreen>
 

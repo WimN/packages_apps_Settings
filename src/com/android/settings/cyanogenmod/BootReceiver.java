@@ -29,6 +29,7 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.ButtonSettings;
 import com.android.settings.hardware.VibratorIntensity;
+import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.livedisplay.DisplayColor;
 import com.android.settings.livedisplay.DisplayGamma;
 import com.android.settings.location.LocationSettings;
@@ -49,6 +50,7 @@ public class BootReceiver extends BroadcastReceiver {
         ButtonSettings.restoreKeyDisabler(ctx);
         DisplayGamma.restore(ctx);
         VibratorIntensity.restore(ctx);
-		GestureSettings.restore(ctx);
+        InputMethodAndLanguageSettings.restore(ctx);
+	GestureSettings.restore(ctx);
     }
 }
