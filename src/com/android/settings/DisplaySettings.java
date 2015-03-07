@@ -506,7 +506,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         CmHardwareManager cmHardwareManager =
             (CmHardwareManager) ctx.getSystemService(Context.CMHW_SERVICE);
-        if (mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+        if (cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
             final boolean enabled = prefs.getBoolean(KEY_TAP_TO_WAKE,
                 cmHardwareManager.get(FEATURE_TAP_TO_WAKE));
 
