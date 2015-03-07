@@ -520,6 +520,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
+
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
@@ -542,6 +543,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                             com.android.internal.R.bool.config_dreamsSupported)) {
                         result.add(KEY_SCREEN_SAVER);
                     }
++                    if (!cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
++                        result.add(KEY_TAP_TO_WAKE);
++                    }
                     if (!isAutomaticBrightnessAvailable(context.getResources())) {
                         result.add(KEY_AUTO_BRIGHTNESS);
                     }
