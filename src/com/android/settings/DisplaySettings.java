@@ -133,9 +133,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mCmHardwareManager = (CmHardwareManager) activity.getSystemService(Context.CMHW_SERVICE);
 
         mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
-        if (displayPrefs != null && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
-            displayPrefs.removePreference(mTapToWake);
-            mTapToWake = null;
+        if (!mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+             advancedPrefs.removePreference(mTapToWake);
+             mTapToWake = null;
          }
 
         addPreferencesFromResource(R.xml.display_settings);
@@ -498,15 +498,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         return false;
     }
 
-
-    /**
-     * Restore the properties associated with this preference on boot
-       @param ctx A valid context
-     */
-    public static void restore(Context ctx) {
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-    }
-
     /**
      * Restore the properties associated with this preference on boot
        @param ctx A valid context
@@ -556,9 +547,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     }
                     if (!isLiftToWakeAvailable(context)) {
                         result.add(KEY_LIFT_TO_WAKE);
-                    }
-                    if (!cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
-                        result.add(KEY_TAP_TO_WAKE);
                     }
                     if (!isDozeAvailable(context)) {
                         result.add(KEY_DOZE_FRAGMENT);
