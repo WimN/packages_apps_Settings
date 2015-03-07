@@ -1433,4 +1433,7 @@ public class SettingsActivity extends Activity
         return android.provider.Settings.Secure.getInt(
                 context.getContentResolver(),
                 android.provider.Settings.Secure.ADVANCED_MODE, 1) == 1;
+    }	
+
+
 }
