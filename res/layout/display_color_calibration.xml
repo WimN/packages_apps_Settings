@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/color_red_text"
                 android:paddingTop="2dip"
-                settings:min="0.01"
+                settings:min="0.20"
                 settings:max="1.00"
                 settings:defaultValue="1.00"
                 settings:digits="4" />
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/color_green_text"
                 android:paddingTop="2dip"
-                settings:min="0.01"
+                settings:min="0.20"
                 settings:max="1.00"
                 settings:defaultValue="1.00"
                 settings:digits="4" />
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/color_blue_text"
                 android:paddingTop="2dip"
-                settings:min="0.01"
+                settings:min="0.20"
                 settings:max="1.00"
                 settings:defaultValue="1.00"
                 settings:digits="4" />
