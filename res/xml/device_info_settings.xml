@@ -37,7 +37,7 @@
          android:fragment="com.android.settings.validus.Changelog" />
 
         <!-- Advanced mode -->
-        <SwitchPreference
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
                 android:key="advanced_mode"
                 android:title="@string/advanced_mode_title"
                 android:summary="@string/advanced_mode_summary"/>
