@@ -1023,4 +1023,8 @@
     <string name="live_display_low_power_summary">Adjust display for lowest power consumption without degradation</string>
     <string name="live_display_enhance_color_title">Enhance colors</string>
     <string name="live_display_enhance_color_summary">Improve color vibrance of flesh tones, scenery, and other images</string>
+
+    <!-- Advanced mode summary -->
+    <string name="advanced_mode_summary">Enable advanced settings</string>
+
 </resources>

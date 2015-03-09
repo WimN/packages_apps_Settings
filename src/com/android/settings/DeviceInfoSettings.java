@@ -42,7 +42,6 @@ import android.text.TextUtils;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
-import com.android.settings.cyanogenmod.SecureSettingSwitchPreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Index;
 import com.android.settings.search.Indexable;
@@ -92,10 +91,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_CRDROID_SHARE = "share";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     
-    public static final String KEY_ADVANCED_MODE = "advanced_mode";
-
-    SecureSettingSwitchPreference mAdvancedSettings;
-
     long[] mHits = new long[3];
 
     @Override
@@ -202,13 +197,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 getPreferenceScreen().removePreference(pref);
             }
         }
-        mAdvancedSettings = (SecureSettingSwitchPreference) findPreference(KEY_ADVANCED_MODE);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mAdvancedSettings.setChecked(SettingsActivity.showAdvancedPreferences(getActivity()));
     }
 
     @Override

@@ -36,6 +36,12 @@
         android:key="disable_fc_notifications"
         android:title="@string/disable_fc_notifications_title"
         android:summary="@string/disable_fc_notifications_summary" />		
+
+    <!-- Advanced mode -->
+    <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+        android:key="advanced_mode"
+        android:title="@string/advanced_mode_title"
+        android:summary="@string/advanced_mode_summary" />
 	
     <SwitchPreference
         android:key="advanced_reboot"
