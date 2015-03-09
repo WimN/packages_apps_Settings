@@ -133,9 +133,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mCmHardwareManager = (CmHardwareManager) activity.getSystemService(Context.CMHW_SERVICE);
 
         mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
-        if (!mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
-             advancedPrefs.removePreference(mTapToWake);
-             mTapToWake = null;
+	if ( advancedPrefs != null && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
+	advancedPrefs.removePreference(mTapToWake);
+	mTapToWake = null;
          }
 
         addPreferencesFromResource(R.xml.display_settings);
