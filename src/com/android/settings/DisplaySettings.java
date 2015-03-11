@@ -151,8 +151,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
 
-        mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS);
-        if (mAutoBrightnessPreference != null && isAutomaticBrightnessAvailable(getResources())) {
+        if (isAutomaticBrightnessAvailable(getResources())) {
+            mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS); 
             mAutoBrightnessPreference.setOnPreferenceChangeListener(this);
         } else {
             if (displayPrefs != null && mAutoBrightnessPreference != null) {
@@ -461,6 +461,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         return false;
     }
 
+    /**
+     * Restore the properties associated with this preference on boot
+     *
+     * @param ctx A valid context
+      */
+     public static void restore(Context ctx) {
+     }
+
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
 
@@ -485,9 +493,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     if (!context.getResources().getBoolean(
                             com.android.internal.R.bool.config_dreamsSupported)) {
                         result.add(KEY_SCREEN_SAVER);
-                    }
-                    if (!cmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
-                        result.add(KEY_TAP_TO_WAKE);
                     }
                     if (!isAutomaticBrightnessAvailable(context.getResources())) {
                         result.add(KEY_AUTO_BRIGHTNESS);
