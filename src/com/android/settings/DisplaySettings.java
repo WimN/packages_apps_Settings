@@ -155,8 +155,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAutoBrightnessPreference = (SwitchPreference) findPreference(KEY_AUTO_BRIGHTNESS); 
             mAutoBrightnessPreference.setOnPreferenceChangeListener(this);
         } else {
-            if (displayPrefs != null && mAutoBrightnessPreference != null) {
-                displayPrefs.removePreference(mAutoBrightnessPreference);
+            if (advancedPrefs != null && mAutoBrightnessPreference != null) {
+                advancedPrefs.removePreference(mAutoBrightnessPreference);
                 mAutoBrightnessPreference = null;
             }
         }
